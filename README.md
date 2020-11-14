@@ -6,7 +6,7 @@ mailService=mailService
 mailUsername=username
 mailPassword=mysecurepass123
 ```
- run `node index.js`.
+Run `node index.js` in the root directory to start node.
 
 To build the client JS for production run `npm run build` in the root directory.
 Then, change the path of the `index.js` file within the project to `dist/bundle.js`. This is where the output of webpack can be found.
