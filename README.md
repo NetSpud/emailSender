@@ -5,7 +5,6 @@ To use, install node JS and run `npm install` in the root directory of the proje
 mailService=mailService
 mailUsername=username
 mailPassword=mysecurepass123
-
 ```
  run `node index.js`.
 
