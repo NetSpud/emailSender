@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In browser Email Sender</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/master.css" type='text/css'>
+</head>
+<body>
+    <div class="w-full max-w-xl container m-auto mt-5">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id='mailForm'>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+                    Address
+                </label>
+                <input
+                    class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="address" type="email" placeholder="Email">
+            </div>
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">
+                    Subject
+                </label>
+                <!-- use border-red-500 for red border on the input -->
+                <input
+                    class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="subject" type="text" placeholder="New Email Subject">
+                <!-- <p class="text-red-500 text-xs italic">Please enter a subject.</p> -->
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                    Message
+                </label>
+                <!-- use border-red-500 for red border -->
+                <div class='shadow-md'>
+                <textarea
+                    class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline resize-none"
+                    id="message" type="text" placeholder="123..." rows="10"></textarea>
+                    </div>
+                <!-- <p class="text-red-500 text-xs italic">Please enter a subject.</p> -->
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Send
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                    Where does this all go?
+                </a>
+            </div>
+        </form>
+        <p class="text-center text-gray-500 text-xs fixed left-0 bottom-0 w-full">
+            &copy;2020 <a href="https://netspud.tech" class="underline text-black">Netspud</a>. All rights reserved.
+        </p>
+    </div>
+    <script src="./dist/bundle.js"></script> 
+        <!-- <script src="./assets/js/index.js"></script> -->
+
+        <script src="https://cdn.tiny.cloud/1/6pwb9qs9hmi026cxsrtw5zqx0zk1sdhpa7f6iopiwdlfk4mn/tinymce/5/tinymce.min.js"
+            referrerpolicy="origin"></script>
+
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            toolbar: 'casechange checklist code',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            body_class: 'shadow-md'
+
+        });
+    </script>
+</body>
+</html>
